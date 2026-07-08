@@ -1,14 +1,14 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class moveCam : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private InputActionReference moveInputReference;
+    [SerializeField] private int screenEdge;
     private Vector2 moveInput;
     private Rigidbody2D rb;
-    
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,32 +16,23 @@ public class moveCam : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        rb.MovePosition(rb.position + moveInput.normalized * (speed * Time.fixedDeltaTime));
+        rb.linearVelocity = moveInput * speed;
     }
 
-    void OnEnable()
-    {
-        moveInputReference.action.Enable();
-        moveInputReference.action.performed += OnMove;
-        moveInputReference.action.canceled += OnMoveCancel;
-    }
-
-    void OnDisable()
-    {
-        moveInputReference.action.performed -= OnMove;
-        moveInputReference.action.canceled -= OnMoveCancel;
-        moveInputReference.action.Disable();
-    }
-
-    private void OnMove(InputAction.CallbackContext ctx)
+    public void Move(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
     }
     
-    private void OnMoveCancel(InputAction.CallbackContext ctx)
+    public void EdgeMove(InputAction.CallbackContext ctx)
     {
-        moveInput = Vector2.zero;
+        print(Camera.main.ScreenToWorldPoint(ctx.ReadValue<Vector2>()));
+        
+        
     }
+    
 }
+    
+    

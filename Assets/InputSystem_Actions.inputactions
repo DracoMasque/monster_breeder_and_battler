@@ -17,12 +17,21 @@
                 },
                 {
                     "name": "move",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "17db0460-c067-4267-bbbc-4e2919434c08",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "mousePos",
+                    "type": "Value",
+                    "id": "52ffbd25-664a-48a5-8073-1431983f60c0",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -38,46 +47,68 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "87b02a12-475a-49cd-b8b2-e3610f34ba9f",
+                    "name": "2D Vector",
+                    "id": "2a560901-01c3-4dc9-b9ab-87a68b4d2222",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "3d15c36a-c961-408f-a44e-eba6bc62d4a0",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": "",
                     "action": "move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "b0e5558e-4d24-448d-a02e-d139f98f0dad",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "baa404c5-1adf-4bca-ae53-83963195465d",
+                    "name": "down",
+                    "id": "17d65c48-250e-4533-bf50-714d5af685e3",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": "",
                     "action": "move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "4789f75d-df69-496e-928d-9162120fdcc4",
+                    "name": "left",
+                    "id": "4b3a0cd8-f9bf-41fb-a980-e6c172600ec7",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "4cc39205-d2ca-423f-b092-5e6ca62f3e9e",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": "",
                     "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f690f069-40fa-4d55-bfa7-5ee86b016b1a",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "mousePos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
