@@ -18,7 +18,9 @@ public class moveCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = moveInput * speed;
+        
+        
+        rb.linearVelocity = moveInput.normalized * speed;
     }
 
     public void Move(InputAction.CallbackContext ctx)
@@ -28,9 +30,30 @@ public class moveCam : MonoBehaviour
     
     public void EdgeMove(InputAction.CallbackContext ctx)
     {
-        print(Camera.main.ScreenToWorldPoint(ctx.ReadValue<Vector2>()));
+        if (ctx.ReadValue<Vector2>().y < screenEdge)
+        {
+            moveInput.y = -1f;
+        }
+        else if (ctx.ReadValue<Vector2>().y > Screen.height - screenEdge)
+        {
+            moveInput.y = +1f;
+        }
         
-        
+        if (ctx.ReadValue<Vector2>().x < screenEdge)
+        {
+            moveInput.x = -1f;
+        }
+        else if (ctx.ReadValue<Vector2>().x > Screen.width - screenEdge)
+        {
+            moveInput.x = +1f;
+        }
+
+        if (ctx.ReadValue<Vector2>().y > screenEdge && ctx.ReadValue<Vector2>().y < Screen.height - screenEdge &&
+            ctx.ReadValue<Vector2>().x > screenEdge && ctx.ReadValue<Vector2>().x < Screen.width - screenEdge)
+        {
+            moveInput.x = 0f;
+            moveInput.y = 0f;
+        }
     }
     
 }

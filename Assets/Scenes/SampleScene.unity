@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::moveCam
   speed: 5
-  screenEdge: 100
+  screenEdge: 20
 --- !u!114 &2127832046
 MonoBehaviour:
   m_ObjectHideFlags: 0
