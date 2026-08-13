@@ -3,8 +3,8 @@ using UnityEngine;
 public class Batiment : MonoBehaviour
 {
     public TypeMana costMana1;
-    public type costMana2;
-    public type costMana3;
+    public TypeMana costMana2;
+    public TypeMana costMana3;
     public int manaAmount1 = 0;
     public int manaAmount2 = 0;
     public int manaAmount3 = 0;
