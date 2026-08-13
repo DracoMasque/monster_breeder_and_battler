@@ -39,16 +39,3 @@ public class ControlManaBar : MonoBehaviour
         
     }
 }
-
-public enum TypeMana
-{
-    AirMana,
-    EauMana,
-    FeuMana,
-    TerreMana,
-    TempsMana,
-    VideMana,
-    EspaceMana,
-    PlaceHolderMana,
-    None
-}
