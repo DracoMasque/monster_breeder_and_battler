@@ -40,7 +40,7 @@ public class ControlManaBar : MonoBehaviour
     }
 }
 
-enum TypeMana
+public enum TypeMana
 {
     AirMana,
     EauMana,
@@ -49,5 +49,6 @@ enum TypeMana
     TempsMana,
     VideMana,
     EspaceMana,
-    PlaceHolderMana
+    PlaceHolderMana,
+    None
 }
