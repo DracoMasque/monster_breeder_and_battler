@@ -10,13 +10,16 @@ public class ManaCollector : Batiment
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        collectionZone = GetComponent<Collider2D>();
+        collectionZone = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (GameObject creature in creatureInRange)
+        {
+            
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

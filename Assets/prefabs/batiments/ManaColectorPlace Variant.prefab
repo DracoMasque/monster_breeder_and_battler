@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3473337965484555774
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211738761038521533, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663255344361444419, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_Name
+      value: ManaColectorPlace Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: m_TagString
+      value: Placement
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660305226928434390, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bdb8a2bef7e45054e8373042cbb4d95e, type: 2}
+    m_RemovedComponents:
+    - {fileID: 3044481302331960932, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+    - {fileID: 1801683234565710737, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 864726449914941116}
+  m_SourcePrefab: {fileID: 100100000, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+--- !u!1 &8660316926653846106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+  m_PrefabInstance: {fileID: 3473337965484555774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &864726449914941116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660316926653846106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf799f69a5f6764994963ea98113c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Placement
+  batiment: {fileID: 3044481302331960932, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+  plassable: 1
+  bloking: []
+  placementMat: {fileID: 0}
+  costMana1: 0
+  costMana2: 8
+  costMana3: 8
+  manaAmount1: 5
+  manaAmount2: 0
+  manaAmount3: 0
+  playerMana1: 0
+  playerMana2: 0
+  playerMana3: 0
+  player: {fileID: 0}

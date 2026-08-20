@@ -31,19 +31,23 @@ public class MoveCam : MonoBehaviour
         if (ctx.ReadValue<Vector2>().y < screenEdge)
         {
             _moveInput.y = -1f;
+            print("marche");
         }
         else if (ctx.ReadValue<Vector2>().y > Screen.height - screenEdge)
         {
             _moveInput.y = +1f;
+            print("marche");
         }
         
         if (ctx.ReadValue<Vector2>().x < screenEdge)
         {
             _moveInput.x = -1f;
+            print("marche");
         }
         else if (ctx.ReadValue<Vector2>().x > Screen.width - screenEdge)
         {
             _moveInput.x = +1f;
+            print("marche");
         }
 
         if (ctx.ReadValue<Vector2>().y > screenEdge && ctx.ReadValue<Vector2>().y < Screen.height - screenEdge &&
@@ -53,7 +57,6 @@ public class MoveCam : MonoBehaviour
             _moveInput.y = 0f;
         }
     }
-    
 }
     
     

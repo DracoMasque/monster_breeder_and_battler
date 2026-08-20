@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Creature
+  - Batiment
+  - Placement
   layers:
   - Default
   - TransparentFX

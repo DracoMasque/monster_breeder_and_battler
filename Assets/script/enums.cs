@@ -12,3 +12,8 @@ public enum TypeMana
     PlaceHolderMana,
     None
 }
+
+public enum TypeGene
+{
+    
+}

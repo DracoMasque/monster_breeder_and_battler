@@ -34,7 +34,16 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "leftClick",
+                    "name": "mousePosBatiment",
+                    "type": "Value",
+                    "id": "40155ec1-8acc-45d4-8dc3-c7cf58ef4036",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "leftClickPlaceBat",
                     "type": "Button",
                     "id": "61ea3a7b-5e63-4089-8220-3a8c93c85f72",
                     "expectedControlType": "",
@@ -123,12 +132,23 @@
                 },
                 {
                     "name": "",
+                    "id": "ebf5a213-36c7-488b-9aaf-b8027b1391bd",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "mousePosBatiment",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fa448fac-e4d0-4b2d-9429-4c513adb54bf",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "leftClick",
+                    "action": "leftClickPlaceBat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
