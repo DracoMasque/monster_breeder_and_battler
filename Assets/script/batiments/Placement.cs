@@ -10,7 +10,7 @@ public class Placement : MonoBehaviour
     private Collider2D collider;
     [SerializeField] private List<GameObject> bloking = new List<GameObject>();
     public Material placementMat;
-    private Transform position;
+    private Transform placementPosition;
     private InputAction mousePos;
     
     public TypeMana costMana1;
@@ -19,10 +19,6 @@ public class Placement : MonoBehaviour
     public int manaAmount1 = 0;
     public int manaAmount2 = 0;
     public int manaAmount3 = 0;
-
-    public float playerMana1;
-    public float playerMana2;
-    public float playerMana3;
     
     [SerializeField] private playerStat player;
 
@@ -36,7 +32,7 @@ public class Placement : MonoBehaviour
     {
         mainCam = Camera.main;
         collider = GetComponent<Collider2D>();
-        position = GetComponent<Transform>();
+        placementPosition = GetComponent<Transform>();
         placementMat = GetComponent<Renderer>().material;
         mousePos = InputSystem.actions["mousePosBatiment"];
     }
@@ -46,54 +42,9 @@ public class Placement : MonoBehaviour
     {
         FollowMousePosition();
         
-        if (costMana1 != TypeMana.None)
-        {
-            playerMana1 = costMana1 switch
-            {
-                TypeMana.AirMana => player.air_mana,
-                TypeMana.EauMana => player.eau_mana,
-                TypeMana.FeuMana => player.feu_mana,
-                TypeMana.TerreMana => player.terre_mana,
-                TypeMana.TempsMana => player.temps_mana,
-                TypeMana.VideMana => player.vide_mana,
-                TypeMana.EspaceMana => player.espace_mana,
-                TypeMana.PlaceHolderMana => player.placeHolder_mana
-            };
-        }
-        
-        if (costMana2 != TypeMana.None)
-        {
-            playerMana2 = costMana1 switch
-            {
-                TypeMana.AirMana => player.air_mana,
-                TypeMana.EauMana => player.eau_mana,
-                TypeMana.FeuMana => player.feu_mana,
-                TypeMana.TerreMana => player.terre_mana,
-                TypeMana.TempsMana => player.temps_mana,
-                TypeMana.VideMana => player.vide_mana,
-                TypeMana.EspaceMana => player.espace_mana,
-                TypeMana.PlaceHolderMana => player.placeHolder_mana
-            };
-        }
-        
-        if (costMana3 != TypeMana.None)
-        {
-            playerMana3 = costMana1 switch
-            {
-                TypeMana.AirMana => player.air_mana,
-                TypeMana.EauMana => player.eau_mana,
-                TypeMana.FeuMana => player.feu_mana,
-                TypeMana.TerreMana => player.terre_mana,
-                TypeMana.TempsMana => player.temps_mana,
-                TypeMana.VideMana => player.vide_mana,
-                TypeMana.EspaceMana => player.espace_mana,
-                TypeMana.PlaceHolderMana => player.placeHolder_mana
-            };
-        }
-        
-        if (bloking.Count != 0 && playerMana1 - manaAmount1 <= 0 
-                               && playerMana2 - manaAmount2 <= 0 
-                               && playerMana3 - manaAmount3 <= 0)
+        if (bloking.Count != 0 || player.getMana(costMana1) - manaAmount1 <= 0 
+                               || player.getMana(costMana2) - manaAmount2 <= 0 
+                               || player.getMana(costMana3) - manaAmount3 <= 0)
         {
             plassable = false;
             placementMat.SetColor("Color", Color.red);
@@ -124,9 +75,13 @@ public class Placement : MonoBehaviour
 
     public void Place(InputAction.CallbackContext ctx)
     {
+        if (!ctx.performed)
+        {
+            return;
+        }
         if (plassable)
         {
-            Instantiate(batiment, position);
+            Instantiate(batiment, placementPosition.position, placementPosition.rotation);
             Payment();
             gameObject.SetActive(false);
         }
@@ -136,101 +91,23 @@ public class Placement : MonoBehaviour
     {
         if (costMana1 != TypeMana.None)
         {
-            switch (costMana1)
-            {
-                case TypeMana.AirMana:
-                    player.air_mana -= manaAmount1;
-                    break;
-                case TypeMana.EauMana:
-                    player.eau_mana -= manaAmount1;
-                    break;
-                case TypeMana.FeuMana:
-                    player.feu_mana -= manaAmount1;
-                    break;
-                case TypeMana.TerreMana:
-                    player.terre_mana -= manaAmount1;
-                    break;
-                case TypeMana.TempsMana:
-                    player.temps_mana -= manaAmount1;
-                    break;
-                case TypeMana.VideMana:
-                    player.vide_mana -= manaAmount1;
-                    break;
-                case TypeMana.EspaceMana:
-                    player.espace_mana -= manaAmount1;
-                    break;
-                case TypeMana.PlaceHolderMana:
-                    player.placeHolder_mana -= manaAmount1;
-                    break;
-            }
+            player.subMana(costMana1,manaAmount1);
         }
         
         if (costMana2 != TypeMana.None)
         {
-            switch (costMana2)
-            {
-                case TypeMana.AirMana:
-                    player.air_mana -= manaAmount2;
-                    break;
-                case TypeMana.EauMana:
-                    player.eau_mana -= manaAmount2;
-                    break;
-                case TypeMana.FeuMana:
-                    player.feu_mana -= manaAmount2;
-                    break;
-                case TypeMana.TerreMana:
-                    player.terre_mana -= manaAmount2;
-                    break;
-                case TypeMana.TempsMana:
-                    player.temps_mana -= manaAmount2;
-                    break;
-                case TypeMana.VideMana:
-                    player.vide_mana -= manaAmount2;
-                    break;
-                case TypeMana.EspaceMana:
-                    player.espace_mana -= manaAmount2;
-                    break;
-                case TypeMana.PlaceHolderMana:
-                    player.placeHolder_mana -= manaAmount2;
-                    break;
-            }
+            player.subMana(costMana2,manaAmount2);
         }
         
         if (costMana3 != TypeMana.None)
         {
-            switch (costMana3)
-            {
-                case TypeMana.AirMana:
-                    player.air_mana -= manaAmount3;
-                    break;
-                case TypeMana.EauMana:
-                    player.eau_mana -= manaAmount3;
-                    break;
-                case TypeMana.FeuMana:
-                    player.feu_mana -= manaAmount3;
-                    break;
-                case TypeMana.TerreMana:
-                    player.terre_mana -= manaAmount3;
-                    break;
-                case TypeMana.TempsMana:
-                    player.temps_mana -= manaAmount3;
-                    break;
-                case TypeMana.VideMana:
-                    player.vide_mana -= manaAmount3;
-                    break;
-                case TypeMana.EspaceMana:
-                    player.espace_mana -= manaAmount3;
-                    break;
-                case TypeMana.PlaceHolderMana:
-                    player.placeHolder_mana -= manaAmount3;
-                    break;
-            }
+            player.subMana(costMana3,manaAmount3);
         }
     }
 
     private void FollowMousePosition()
     {
-        transform.position = GetWorldPosition();
+        placementPosition.position = GetWorldPosition();
     }
     
     private Vector2 GetWorldPosition()
