@@ -3,7 +3,7 @@
     "name": "InputSystem_Actions",
     "maps": [
         {
-            "name": "Player",
+            "name": "Camera",
             "id": "06fa4cd2-a570-4df3-bf79-07ff803059d7",
             "actions": [
                 {
@@ -32,24 +32,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "mousePosBatiment",
-                    "type": "Value",
-                    "id": "40155ec1-8acc-45d4-8dc3-c7cf58ef4036",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "leftClickPlaceBat",
-                    "type": "Button",
-                    "id": "61ea3a7b-5e63-4089-8220-3a8c93c85f72",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -129,10 +111,36 @@
                     "action": "mousePos",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Batiment",
+            "id": "9074847a-21ca-48c8-a266-e26df8db4cf8",
+            "actions": [
+                {
+                    "name": "mousePosBatiment",
+                    "type": "Value",
+                    "id": "78fd3e67-4b71-40b3-b1e6-96939e1c31a9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
+                    "name": "leftClickPlaceBat",
+                    "type": "Button",
+                    "id": "f9995cec-3020-4ae1-adb8-9a34e2170ada",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
                     "name": "",
-                    "id": "ebf5a213-36c7-488b-9aaf-b8027b1391bd",
+                    "id": "c9af02c8-e09d-4d6b-96a6-6a3d2f3f84cd",
                     "path": "<Pointer>/position",
                     "interactions": "",
                     "processors": "",
@@ -143,7 +151,7 @@
                 },
                 {
                     "name": "",
-                    "id": "fa448fac-e4d0-4b2d-9429-4c513adb54bf",
+                    "id": "424d7907-5df1-4119-8005-524656d6e741",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",

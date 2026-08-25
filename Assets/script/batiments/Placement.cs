@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -42,23 +43,84 @@ public class Placement : MonoBehaviour
     {
         FollowMousePosition();
         
-        if (bloking.Count != 0 || player.getMana(costMana1) - manaAmount1 <= 0 
-                               || player.getMana(costMana2) - manaAmount2 <= 0 
-                               || player.getMana(costMana3) - manaAmount3 <= 0)
+        if (bloking.Count != 0 || EnoughMana())
         {
+            print(bloking.Count);
+            print(EnoughMana());
             plassable = false;
-            placementMat.SetColor("Color", Color.red);
+            placementMat.SetColor("_Color", Color.red);
         }
         else
         {
+            print("plassable");
             plassable = true;
-            placementMat.SetColor("Color", Color.green);
+            placementMat.SetColor("_Color", Color.green);
         }
+    }
+
+    private bool EnoughMana()
+    {
+        bool mana1 = false;
+        bool mana2 = false;
+        bool mana3 = false;
+        if (costMana1 != TypeMana.None)
+        {
+            if (player.getMana(costMana1) - manaAmount1 < 0)
+            {
+                mana1 = true;
+            }
+            else
+            {
+                mana1 = false;
+            }
+        }
+        else
+        {
+            mana1 = false;
+        }
+
+        if (costMana2 != TypeMana.None)
+        {
+            if (player.getMana(costMana2) - manaAmount2 < 0)
+            {
+                mana2 = true;
+            }
+            else 
+            {
+                mana2 = false;
+            }
+        }
+        else
+        {
+            mana2 = false;
+        }
+
+        if (costMana3 != TypeMana.None)
+        {
+            if (player.getMana(costMana3) - manaAmount3 < 0)
+            {
+                mana3 = true;
+            }
+            else
+            {
+                mana3 = false;
+            }
+        }
+        else
+        {
+            mana3 = false;
+        }
+
+        if (mana1 || mana2 || mana3)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
         if (collision.CompareTag("Batiment"))
         {
             bloking.Add(collision.gameObject);
@@ -79,10 +141,10 @@ public class Placement : MonoBehaviour
         {
             return;
         }
+        
         if (plassable)
         {
-            Instantiate(batiment, placementPosition.position, placementPosition.rotation);
-            Payment();
+            print(ctx.performed);
             gameObject.SetActive(false);
         }
     }
@@ -113,5 +175,10 @@ public class Placement : MonoBehaviour
     private Vector2 GetWorldPosition()
     {
         return mainCam.ScreenToWorldPoint(mousePos.ReadValue<Vector2>());
+    }
+
+    private void OnDisable()
+    {
+        throw new NotImplementedException();
     }
 }
