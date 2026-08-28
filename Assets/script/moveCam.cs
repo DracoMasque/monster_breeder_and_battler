@@ -25,6 +25,7 @@ public class MoveCam : MonoBehaviour
     public void Move(InputAction.CallbackContext ctx)
     {
         _moveInput = ctx.ReadValue<Vector2>();
+        print(_moveInput);
     }
     
     public void EdgeMove(InputAction.CallbackContext ctx)
