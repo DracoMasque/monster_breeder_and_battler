@@ -119,15 +119,6 @@
             "id": "9074847a-21ca-48c8-a266-e26df8db4cf8",
             "actions": [
                 {
-                    "name": "mousePosBatiment",
-                    "type": "Value",
-                    "id": "78fd3e67-4b71-40b3-b1e6-96939e1c31a9",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "leftClickPlaceBat",
                     "type": "Button",
                     "id": "f9995cec-3020-4ae1-adb8-9a34e2170ada",
@@ -135,20 +126,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "mousePosBatiment",
+                    "type": "Value",
+                    "id": "e2a86eee-149c-4a84-8b4c-b24243b9d74c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "c9af02c8-e09d-4d6b-96a6-6a3d2f3f84cd",
-                    "path": "<Pointer>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "mousePosBatiment",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "424d7907-5df1-4119-8005-524656d6e741",
@@ -157,6 +146,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "leftClickPlaceBat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b173498-2c2e-42f2-8a81-1740bc27ceea",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "mousePosBatiment",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

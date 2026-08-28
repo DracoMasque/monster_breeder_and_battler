@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
       propertyPath: m_TagString
@@ -77,6 +77,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
       insertIndex: 2
       addedObject: {fileID: 864726449914941116}
+    - targetCorrespondingSourceObject: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8385523367043124721}
   m_SourcePrefab: {fileID: 100100000, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
 --- !u!1 &8660316926653846106 stripped
 GameObject:
@@ -105,7 +108,31 @@ MonoBehaviour:
   manaAmount1: 5
   manaAmount2: 0
   manaAmount3: 0
-  playerMana1: 0
-  playerMana2: 0
-  playerMana3: 0
   player: {fileID: 0}
+--- !u!50 &8385523367043124721
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660316926653846106}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

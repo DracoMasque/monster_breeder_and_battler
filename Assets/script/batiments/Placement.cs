@@ -13,6 +13,7 @@ public class Placement : MonoBehaviour
     public Material placementMat;
     private Transform placementPosition;
     private InputAction mousePos;
+    private InputAction button;
     
     public TypeMana costMana1;
     public TypeMana costMana2;
@@ -36,6 +37,7 @@ public class Placement : MonoBehaviour
         placementPosition = GetComponent<Transform>();
         placementMat = GetComponent<Renderer>().material;
         mousePos = InputSystem.actions["mousePosBatiment"];
+        button = InputSystem.actions["leftClickPlaceBat"];
     }
 
     // Update is called once per frame
@@ -55,6 +57,11 @@ public class Placement : MonoBehaviour
             print("plassable");
             plassable = true;
             placementMat.SetColor("_Color", Color.green);
+        }
+
+        if (button.triggered)
+        {
+            Place();
         }
     }
 
@@ -135,17 +142,14 @@ public class Placement : MonoBehaviour
         }
     }
 
-    public void Place(InputAction.CallbackContext ctx)
+    public void Place()
     {
-        if (!ctx.performed)
-        {
-            return;
-        }
-        
         if (plassable)
         {
-            print(ctx.performed);
-            gameObject.SetActive(false);
+            print("performed");
+            Payment();
+            Instantiate(batiment, placementPosition.position, placementPosition.rotation);
+            Destroy(gameObject);
         }
     }
 
@@ -175,10 +179,5 @@ public class Placement : MonoBehaviour
     private Vector2 GetWorldPosition()
     {
         return mainCam.ScreenToWorldPoint(mousePos.ReadValue<Vector2>());
-    }
-
-    private void OnDisable()
-    {
-        throw new NotImplementedException();
     }
 }
