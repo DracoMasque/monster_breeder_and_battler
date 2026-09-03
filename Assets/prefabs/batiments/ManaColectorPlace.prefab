@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
       propertyPath: m_Name
-      value: ManaColectorPlace Variant
+      value: ManaColectorPlace
       objectReference: {fileID: 0}
     - target: {fileID: 5196140385186148260, guid: 91d696ab775b48f47a3b22b05c5e5684, type: 3}
       propertyPath: m_IsActive

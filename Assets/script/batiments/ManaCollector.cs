@@ -4,7 +4,7 @@ using UnityEngine;
 public class ManaCollector : Batiment
 {
     private Collider2D collectionZone;
-    private List<GameObject> creatureInRange = new List<GameObject>();
+    private List<creatures> creatureInRange = new List<creatures>();
     [SerializeField] private float multiplier = 0.2f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,9 +16,9 @@ public class ManaCollector : Batiment
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject creature in creatureInRange)
+        foreach (creatures creature in creatureInRange)
         {
-            
+            creature.GenerateMana(multiplier);
         }
     }
 
@@ -26,7 +26,7 @@ public class ManaCollector : Batiment
     {
         if (collision.tag == "Creature")
         {
-            creatureInRange.Add(collision.gameObject);
+            creatureInRange.Add(collision.gameObject.GetComponent<creatures>());
         }
     }
 
@@ -34,7 +34,7 @@ public class ManaCollector : Batiment
     {
         if (collision.tag == "Creature")
         {
-            creatureInRange.Remove(collision.gameObject);
+            creatureInRange.Remove(collision.gameObject.gameObject.GetComponent<creatures>());
         }
     }
 }

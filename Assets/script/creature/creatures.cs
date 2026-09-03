@@ -22,6 +22,13 @@ public class creatures : MonoBehaviour
 
     private bool isKO;
     private bool isDead;
+    
+    private playerStat player;
+    
+    private void Awake()
+    {
+        player = GameObject.Find("player").GetComponent<playerStat>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,5 +39,10 @@ public class creatures : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GenerateMana(float multiplier)
+    {
+        player.addMana(element.typeID, productionAmount * multiplier);
     }
 }
