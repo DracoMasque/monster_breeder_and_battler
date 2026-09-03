@@ -19,11 +19,13 @@ public class MoveCam : MonoBehaviour
     void Update()
     {
         _rb.linearVelocity = _moveInput.normalized * speed;
+        print(_moveInput);
     }
 
     public void Move(InputAction.CallbackContext ctx)
     {
         _moveInput = ctx.ReadValue<Vector2>();
+        print(_moveInput);
     }
     
     public void EdgeMove(InputAction.CallbackContext ctx)
@@ -53,7 +55,6 @@ public class MoveCam : MonoBehaviour
             _moveInput.y = 0f;
         }
     }
-    
 }
     
     

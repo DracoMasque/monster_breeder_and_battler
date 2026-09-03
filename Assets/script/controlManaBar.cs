@@ -11,7 +11,6 @@ public class ControlManaBar : MonoBehaviour
     [SerializeField] private playerStat player;
     private TextMeshProUGUI _text;
     [SerializeField] private Image image;
-    public float typeManaAmount;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,19 +22,8 @@ public class ControlManaBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        typeManaAmount = typeMana switch
-        {
-            TypeMana.AirMana => player.air_mana,
-            TypeMana.EauMana => player.eau_mana,
-            TypeMana.FeuMana => player.feu_mana,
-            TypeMana.TerreMana => player.terre_mana,
-            TypeMana.TempsMana => player.temps_mana,
-            TypeMana.VideMana => player.vide_mana,
-            TypeMana.EspaceMana => player.espace_mana,
-            TypeMana.PlaceHolderMana => player.placeHolder_mana
-        };
-        _text.text = typeManaAmount.ToString();
-        image.fillAmount = typeManaAmount/player.max_mana;
+        _text.text = player.getMana(typeMana).ToString();
+        image.fillAmount = player.getMana(typeMana)/player.getManaMax();
         
     }
 }

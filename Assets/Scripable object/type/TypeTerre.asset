@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3fe7c51e66f3644a04fb7912833df0, type: 3}
   m_Name: TypeTerre
   m_EditorClassIdentifier: Assembly-CSharp::type
-  weaknesses: []
-  resist: []
+  typeID: 3
+  weaknesses:
+  - {fileID: 11400000, guid: ab59b48f69ce71f428bd74d70eceec01, type: 2}
+  resist:
+  - {fileID: 11400000, guid: 4406aec7410d65f4da69d1e3120776f7, type: 2}
   imune: []

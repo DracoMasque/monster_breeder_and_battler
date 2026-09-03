@@ -1,3 +1,4 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +11,9 @@ public class zoomCam : MonoBehaviour
     
     [SerializeField] private float multiplier = 2f, minZoom = 1f, maxZoom = 10f, smoothTime = 0.1f;
     private float velocity;
+
     
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -3,7 +3,7 @@
     "name": "InputSystem_Actions",
     "maps": [
         {
-            "name": "Player",
+            "name": "Camera",
             "id": "06fa4cd2-a570-4df3-bf79-07ff803059d7",
             "actions": [
                 {
@@ -109,6 +109,54 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "mousePos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Batiment",
+            "id": "9074847a-21ca-48c8-a266-e26df8db4cf8",
+            "actions": [
+                {
+                    "name": "leftClickPlaceBat",
+                    "type": "Button",
+                    "id": "f9995cec-3020-4ae1-adb8-9a34e2170ada",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "mousePosBatiment",
+                    "type": "Value",
+                    "id": "e2a86eee-149c-4a84-8b4c-b24243b9d74c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "424d7907-5df1-4119-8005-524656d6e741",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "leftClickPlaceBat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b173498-2c2e-42f2-8a81-1740bc27ceea",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "mousePosBatiment",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
