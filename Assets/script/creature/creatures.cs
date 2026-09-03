@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class creatures : MonoBehaviour
@@ -22,6 +23,9 @@ public class creatures : MonoBehaviour
 
     private bool isKO;
     private bool isDead;
+    
+    private List<gene>  geneALL;
+    
     
     private playerStat player;
     
