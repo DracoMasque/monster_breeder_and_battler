@@ -19,10 +19,34 @@ public enum TypeGene
     FormeCorp,
     PelagePeau,
     Yeux,
-    Oreille,
+    Oreilles,
     JambeAvant,
     JambeArreire,
+    PatteAvant,
+    PatteArreire,
     Squellette,
     Nez,
-    Bouche
+    Bouche,
+    Taille,
+    Queue,
+    Muscle,
+    Extra,
+    None,
+}
+
+public enum Stats
+{
+    Speed,
+    Health,
+    Magic,
+    Defence,
+    MutationChance
+}
+
+public enum Operateur
+{
+    Moins,
+    Plus,
+    Division,
+    Multiplication
 }
