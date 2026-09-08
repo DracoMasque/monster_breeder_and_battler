@@ -40,7 +40,8 @@ public enum Stats
     Health,
     Magic,
     Defence,
-    MutationChance
+    MutationChance,
+    ExtraNumber
 }
 
 public enum Operateur

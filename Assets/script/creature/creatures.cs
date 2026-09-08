@@ -29,21 +29,21 @@ public class creatures : MonoBehaviour
     
     private List<gene> geneALL;
     private List<gene> geneExtra;
-    private gene formeTete;
-    private gene yeux;
-    private gene oreilles;
-    private gene nez;
-    private gene bouche;
-    private gene formeCorp;
-    private gene jambeArreire;
-    private gene jambeAvant;
-    private gene patteArreire;
-    private gene patteAvant;
-    private gene queue;
-    private gene squellette;
-    private gene muscle;
-    private gene taille;
-    private gene pelagePeau;
+    [SerializeField] private gene formeTete;
+    [SerializeField] private gene yeux;
+    [SerializeField] private gene oreilles;
+    [SerializeField] private gene nez;
+    [SerializeField] private gene bouche;
+    [SerializeField] private gene formeCorp;
+    [SerializeField] private gene jambeArreire;
+    [SerializeField] private gene jambeAvant;
+    [SerializeField] private gene patteArreire;
+    [SerializeField] private gene patteAvant;
+    [SerializeField] private gene queue;
+    [SerializeField] private gene squellette;
+    [SerializeField] private gene muscle;
+    [SerializeField] private gene taille;
+    [SerializeField] private gene pelagePeau;
     
     private playerStat player;
     

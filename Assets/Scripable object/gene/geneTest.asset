@@ -14,9 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::gene
   geneName: 
   geneDescription: 
-  geneSprite: {fileID: 0}
+  geneObject: {fileID: 0}
   geneType: 0
   geneType2: 16
-  geneStats1: 0
-  geneStats2: 0
-  geneStats3: 0
+  geneStat1: 0
+  operateur1: 0
+  geneStatValue1: 0
+  geneStat2: 0
+  operateur2: 0
+  geneStatValue2: 0
+  geneStat3: 0
+  operateur3: 0
+  geneStatValue3: 0
+  pickchance: 0
+  dominantPercentage: 0
+  isDominant: 0

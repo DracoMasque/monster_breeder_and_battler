@@ -1736,7 +1736,7 @@ GameObject:
   - component: {fileID: 1290008328}
   - component: {fileID: 1290008329}
   m_Layer: 5
-  m_Name: container_manaAmount
+  m_Name: container_batimentButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

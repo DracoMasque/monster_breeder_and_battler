@@ -20,7 +20,7 @@ public class gene : ScriptableObject
     public float geneStatValue3;
     
     [Header("aparition")]
-    public float pickchance;
-    public float dominantPercentage;
+    [Range(0, 10)] public int pickchance;
+    [Range(0.0f, 10.0f)] public float dominantPercentage;
     public bool isDominant;
 }
