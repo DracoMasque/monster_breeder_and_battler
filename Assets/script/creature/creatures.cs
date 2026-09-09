@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class creatures : MonoBehaviour
+public class Creatures : MonoBehaviour
 {
     private type element;
     private float productionAmount;
@@ -27,29 +27,29 @@ public class creatures : MonoBehaviour
     private bool isKO;
     private bool isDead;
     
-    private List<gene> geneALL;
-    private List<gene> geneExtra;
-    [SerializeField] private gene formeTete;
-    [SerializeField] private gene yeux;
-    [SerializeField] private gene oreilles;
-    [SerializeField] private gene nez;
-    [SerializeField] private gene bouche;
-    [SerializeField] private gene formeCorp;
-    [SerializeField] private gene jambeArreire;
-    [SerializeField] private gene jambeAvant;
-    [SerializeField] private gene patteArreire;
-    [SerializeField] private gene patteAvant;
-    [SerializeField] private gene queue;
-    [SerializeField] private gene squellette;
-    [SerializeField] private gene muscle;
-    [SerializeField] private gene taille;
-    [SerializeField] private gene pelagePeau;
+    private List<Gene> geneALL;
+    private List<Gene> geneExtra;
+    [SerializeField] private Gene formeTete;
+    [SerializeField] private Gene yeux;
+    [SerializeField] private Gene oreilles;
+    [SerializeField] private Gene nez;
+    [SerializeField] private Gene bouche;
+    [SerializeField] private Gene formeCorp;
+    [SerializeField] private Gene jambeArreire;
+    [SerializeField] private Gene jambeAvant;
+    [SerializeField] private Gene patteArreire;
+    [SerializeField] private Gene patteAvant;
+    [SerializeField] private Gene queue;
+    [SerializeField] private Gene squellette;
+    [SerializeField] private Gene muscle;
+    [SerializeField] private Gene taille;
+    [SerializeField] private Gene pelagePeau;
     
-    private playerStat player;
+    private PlayerStat player;
     
     private void Awake()
     {
-        player = GameObject.Find("player").GetComponent<playerStat>();
+        player = GameObject.Find("player").GetComponent<PlayerStat>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

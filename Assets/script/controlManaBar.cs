@@ -8,14 +8,14 @@ using UnityEngine.UI;
 public class ControlManaBar : MonoBehaviour
 {
     [FormerlySerializedAs("type_mana")] [SerializeField] private TypeMana typeMana;
-    [SerializeField] private playerStat player;
+    [SerializeField] private PlayerStat player;
     private TextMeshProUGUI _text;
     [SerializeField] private Image image;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerStat>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
         _text = GetComponentInChildren<TextMeshProUGUI>();
     }
 

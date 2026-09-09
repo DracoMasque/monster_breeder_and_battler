@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
-public class breed
+public class Breed
 {
-    List<gene> enfant = new List<gene>();
+    List<Gene> enfant = new List<Gene>();
     
-    public List<gene> selectGene(List<gene> parent1, List<gene> parent2)
+    public List<Gene> selectGene(List<Gene> parent1, List<Gene> parent2)
     {
         bool goodToContinue = false;
         
         while(!goodToContinue){
-            foreach (gene g in parent1)
+            foreach (Gene g in parent1)
             {
                 if (g.pickchance > Random.Range(0, 10))
                 {
@@ -19,7 +19,7 @@ public class breed
                 }
             }
 
-            foreach (gene g in parent2)
+            foreach (Gene g in parent2)
             {
                 if (g.pickchance > Random.Range(0, 10))
                 {
@@ -30,7 +30,7 @@ public class breed
             for (int i = 0; i < 16; i++)
             {
                 int specificGeneNumber = 0;
-                foreach (gene g in enfant)
+                foreach (Gene g in enfant)
                 {
                     if (g.geneType == (TypeGene)Enum.GetValues(typeof(TypeGene)).GetValue(i))
                     {
@@ -49,6 +49,9 @@ public class breed
         }
         return enfant;
     }
-    
-    public 
+
+    public void PickActiveGenes(List<Gene> enfant)
+    {
+        
+    }
 }

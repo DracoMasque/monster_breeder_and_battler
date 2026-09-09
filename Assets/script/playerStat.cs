@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class playerStat : MonoBehaviour
+public class PlayerStat : MonoBehaviour
 {
     [SerializeField] private float air_mana = 0;
     [SerializeField] private float eau_mana = 0;

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "gene", menuName = "Scriptable Objects/gene")]
-public class gene : ScriptableObject
+public class Gene : ScriptableObject
 {
     [Header("visible by player")]
     public string geneName;

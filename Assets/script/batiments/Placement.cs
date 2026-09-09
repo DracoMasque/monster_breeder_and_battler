@@ -22,11 +22,11 @@ public class Placement : MonoBehaviour
     public int manaAmount2 = 0;
     public int manaAmount3 = 0;
     
-    [SerializeField] private playerStat player;
+    [SerializeField] private PlayerStat player;
 
     private void Awake()
     {
-        player = GameObject.Find("player").GetComponent<playerStat>();
+        player = GameObject.Find("player").GetComponent<PlayerStat>();
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

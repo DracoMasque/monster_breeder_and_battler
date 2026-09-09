@@ -3,7 +3,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class zoomCam : MonoBehaviour
+public class ZoomCam : MonoBehaviour
 {
     private CinemachineCamera camera;
     private float zoomTarget;
